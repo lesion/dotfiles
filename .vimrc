@@ -30,6 +30,7 @@ Plugin 'gmarik/Vundle.vim'
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -43,9 +44,17 @@ Plugin 'vim-scripts/genutils'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gorodinskiy/vim-coloresque.git'
 Plugin 'ervandew/supertab'
+
+
+"Plugin 'Shougo/neocomplcache'
+"Plugin 'Shougo/neocomplete'
+"Plugin 'Shougo/neosnippet'
+"Plugin 'Shougo/neosnippet-snippets'
+
 Plugin 'bling/vim-airline'           " status bar and tabs fancy things
 Plugin 'scrooloose/syntastic'        " syntax checking
-" Plugin 'msanders/snipmate.vim'
+
+ "Plugin 'msanders/snipmate.vim'
 Plugin 'majutsushi/tagbar'           " F8 and tag bar appears
 Plugin 'kien/ctrlp.vim'              " open file smarty
 Plugin 'ntpeters/vim-better-whitespace' " strip white spaces
@@ -66,11 +75,12 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+
 Plugin 'garbas/vim-snipmate'
 
 Plugin 'hynek/vim-python-pep8-indent'
 
-Plugin 'kshenoy/vim-signature'
+"Plugin 'kshenoy/vim-signature'
 Plugin 'honza/vim-snippets'
 
 "  provides automatic closing of quotes, parenthesis, brackets,
@@ -238,9 +248,9 @@ let g:airline#extensions#tabline#enabled = 1
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 
-
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_check_on_open=1
+
 
  set cursorline
  colorscheme distinguished
@@ -276,4 +286,14 @@ nmap <leader>[ :GitGutterPrevHunk<CR>
 " without being forced to write or undo your changes first.
 set hidden
 set colorcolumn=100
+
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
