@@ -33,6 +33,8 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *.jade set filetype=jade
 
 " "}}}
 "
@@ -52,7 +54,7 @@ Plugin 'ervandew/supertab'
 "Plugin 'Shougo/neosnippet-snippets'
 
 Plugin 'bling/vim-airline'           " status bar and tabs fancy things
-Plugin 'scrooloose/syntastic'        " syntax checking
+"Plugin 'scrooloose/syntastic'        " syntax checking
 
  "Plugin 'msanders/snipmate.vim'
 Plugin 'majutsushi/tagbar'           " F8 and tag bar appears
@@ -60,11 +62,12 @@ Plugin 'kien/ctrlp.vim'              " open file smarty
 Plugin 'ntpeters/vim-better-whitespace' " strip white spaces
 " Plugin 'godlygeek/tabular'               "
 Plugin 'scrooloose/nerdcommenter.git'
-Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 "Plugin 'Yggdroot/indentLine'
+Plugin 'strogonoff/vim-coffee-script'
 
 Plugin 'plasticboy/vim-markdown'
 " Plugin 'mattn/emmet-vim'
@@ -82,6 +85,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 
 "Plugin 'kshenoy/vim-signature'
 Plugin 'honza/vim-snippets'
+Plugin 'digitaltoad/vim-jade'
 
 "  provides automatic closing of quotes, parenthesis, brackets,
 "Plugin 'Raimondi/delimitMate'
@@ -200,6 +204,7 @@ set nostartofline
 
 filetype plugin on
 filetype indent on
+filetype on
 
 set nobackup
 set nowritebackup
@@ -297,3 +302,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
+
+set iskeyword-=.
+au BufRead,BufNewFile *.tag :set filetype=html
