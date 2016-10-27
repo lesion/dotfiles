@@ -1,0 +1,28 @@
+[user]
+	email = lesion@autistici.org
+	name = lesion
+[core]
+	editor = vim
+	filemode = false
+	autocrlf = false
+[alias]
+	st = status -s
+	co = checkout
+	br = branch
+	ci = commit -v
+	lg = log --graph --oneline --decorate --all --name-status
+[push]
+	default = simple
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[color]
+	ui = true
+[log]
+  date = relative
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+
+[branch]
+	autosetuprebase = always
