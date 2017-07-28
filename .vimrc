@@ -57,7 +57,7 @@ Plugin 'bling/vim-airline'           " status bar and tabs fancy things
 "Plugin 'scrooloose/syntastic'        " syntax checking
 
  "Plugin 'msanders/snipmate.vim'
-Plugin 'majutsushi/tagbar'           " F8 and tag bar appears
+" Plugin 'majutsushi/tagbar'           " F8 and tag bar appears
 Plugin 'kien/ctrlp.vim'              " open file smarty
 Plugin 'ntpeters/vim-better-whitespace' " strip white spaces
 " Plugin 'godlygeek/tabular'               "
