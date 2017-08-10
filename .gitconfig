@@ -1,10 +1,12 @@
 [user]
 	email = lesion@autistici.org
 	name = lesion
+	signingkey = 0B012177
 [core]
 	editor = vim
 	filemode = false
 	autocrlf = false
+	excludesfile = ~/.gitignore
 [alias]
 	st = status -s
 	co = checkout
@@ -26,3 +28,7 @@
 
 [branch]
 	autosetuprebase = always
+[rerere]
+	enabled = true
+[gpg]
+	program = gpg2
