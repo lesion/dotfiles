@@ -305,3 +305,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 set iskeyword-=.
 au BufRead,BufNewFile *.tag :set filetype=html
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
