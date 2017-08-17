@@ -10,10 +10,6 @@ install_default_server_packages () {
     wget \
     aptitude
 
-  sudo apt autoremove
-  sudo apt autoclean
-  sudo apt clean
-
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 }
