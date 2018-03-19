@@ -20,4 +20,5 @@ install_dot_files () {
   git clone https://github.com/lesion/dotfiles.git ~/.dotfiles
   ln -s ~/.dotfiles/.vimrc ~/.vimrc
   ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+  ln -s ~/.dotfiles/.zshrc ~/.zshrc
 }
