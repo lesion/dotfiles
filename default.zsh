@@ -14,6 +14,9 @@ install_default_server_packages () {
   # install oh my zsh
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+  vim +PluginInstall
 }
 
 install_dot_files () {
