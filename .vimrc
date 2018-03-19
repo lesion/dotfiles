@@ -35,6 +35,9 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead *.jade set filetype=jade
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " "}}}
 "
@@ -54,6 +57,7 @@ Plugin 'ervandew/supertab'
 "Plugin 'Shougo/neosnippet-snippets'
 
 Plugin 'bling/vim-airline'           " status bar and tabs fancy things
+Plugin 'posva/vim-vue'
 "Plugin 'scrooloose/syntastic'        " syntax checking
 
  "Plugin 'msanders/snipmate.vim'
@@ -85,7 +89,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 
 "Plugin 'kshenoy/vim-signature'
 Plugin 'honza/vim-snippets'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'digitaltoad/vim-pug'
 
 "  provides automatic closing of quotes, parenthesis, brackets,
 "Plugin 'Raimondi/delimitMate'
